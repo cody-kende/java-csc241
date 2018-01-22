@@ -6,7 +6,7 @@ import java.util.Random;
 * @version 2018-01-19, CSC-241 Assignment 01
 */
 public class RandomRange{
-	public static void main(String[] args){
+	public RandomRange(){
 	// Random range for pixel size of circles.
 		int START=100;
 		int END=200;
