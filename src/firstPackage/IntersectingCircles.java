@@ -1,7 +1,8 @@
 package firstPackage;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 /**
 *
 * @author CJ Kende, S02058050
@@ -20,9 +21,20 @@ public class IntersectingCircles{
 		JOptionPane.showMessageDialog(null, "Welcome to Java");
                 Circles panel = new Circles();
                 JFrame application = new JFrame();
+                JButton button = new JButton("New Circles!");
+                button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				// recreate the random circles and repaint panel when the button is pressed
+				panel.createArrayOfCircles();
+				panel.repaint();
+			}
+		});
+
 		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		application.add(panel);
-		application.setSize(1000,900); // .setSize(width, height);
+		panel.add(button);
+		application.setSize(750,750); // .setSize(width, height);
 		application.setVisible(true);
+                panel.createArrayOfCircles();
 	}
 }	
